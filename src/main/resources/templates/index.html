@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet" >
+</head>
+<body>
+
+<a href="/logout">Змінити користувача</a>
+<hr>
+    <span th:text="${user.getUsername()}"></span>
+    <span> на рахунку
+        <span class="money" th:text="${user.getCreditCard().getMoney()}"></span>
+    </span>
+<br>
+
+<div class="error-bills"></div>
+
+<label>Бажаєте поповнити свій рахунок?(<em>сумма повинна бути кратна 100, 200 або 500</em>)
+    <input class="refMoney" type="number" placeholder="enter bills">
+    <input class="btn" type="button" value="REFILL">
+</label>
+
+<hr>
+<div class="error-getMoney"></div>
+<label>Бажаєте зняти кошти?(<em>Банкомат видає гроші кратні 100, 200 або 500</em>)
+    <input class="getMoney" type="number" placeholder="enter bills">
+    <input class="btn2" type="button" value="GETMONEY">
+</label>
+<hr>
+<div class="error-transfer"></div>
+<label>Бажаєте перевести гроші іншому користувачу?
+    <input class="sendMoney" type="number" placeholder="enter bills">
+    <input class="idCredit" type="number" placeholder="idCreditCard another person">
+    <input class="btn3" type="button" value="TRANSFER">
+</label>
+<p>картки в БД(<em>ці ідентифікатори відображають коди карток</em>)</p>
+<div>
+    <p th:each="id : ${cards}" th:text="${id.getId_CreditCard()}"></p>
+</div>
+<hr>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+*{
+    font-size: 17px;
+}
+
+.hidden{
+    display: none;
+}
+.error-bills, .error-transfer{
+    color: red;
+}
+a{
+    font-size: 20px;
+    font-weight: bold;
+}
+.money{
+    font-size: 20px;
+    color: blue;
+}

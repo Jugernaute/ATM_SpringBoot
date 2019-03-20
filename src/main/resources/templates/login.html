@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Логінація користувача</p>
+<form th:action="@{/login}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="text" name="password"/> </label></div>
+    <div><input type="submit" value="Sign In"/></div>
+</form>
+<hr>
+<p>Форма для створення користувача</p>
+<form th:action="@{/save}" method="post">
+    <div><label> User Name : <input type="text" name="username"/> </label></div>
+    <div><label> Password: <input type="text" name="password"/> </label></div>
+    <div><input type="submit" value="save"/></div>
+</form>
+</body>
+</html>
