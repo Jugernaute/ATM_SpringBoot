@@ -2,9 +2,9 @@
     font-size: 17px;
 }
 
-.hidden{
-    display: none;
-}
+/*.hidden{*/
+    /*display: none;*/
+/*}*/
 .error-bills, .error-transfer{
     color: red;
 }

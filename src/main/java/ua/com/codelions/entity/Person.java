@@ -2,16 +2,18 @@ package ua.com.codelions.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Component
 public class Person implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Person;
+    private long id_Person;
     private String username;
     private String password;
     private boolean isAccountNonExpired = true;
@@ -33,7 +35,7 @@ public class Person implements UserDetails {
 //        this.creditCard = creditCard;
     }
 
-    public int getId_Person() {
+    public long getId_Person() {
         return id_Person;
     }
 

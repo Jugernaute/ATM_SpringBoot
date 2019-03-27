@@ -5,7 +5,7 @@ public enum Bills {
     TWO (200),
     THREE (500);
 
-    private int index;
+    private final int index;
 
     Bills(int index) {
         this.index = index;

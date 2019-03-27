@@ -9,6 +9,7 @@ $('.btn').on('click', function () {
     $.ajax({
         url:'/selfRefill/',
         data: {sum: money},
+        type: 'put',
         success: function (result) {
            resultFromControllerSuccess(result);
         },
@@ -25,6 +26,7 @@ $('.btn2').on('click', function () {
     $.ajax({
         url:'/getMoney/',
         data: {sum: money},
+        type: 'put',
         success: function (result) {
             resultFromControllerSuccess(result)
         },
@@ -43,6 +45,7 @@ $('.btn3').on('click', function () {
         $.ajax({
             url:'/transferMoney/',
             data: {money: money, idCard: idCreditCard},
+            type: 'put',
             success: function (result) {
                 $.each(result, function (k, v) {
                     if (k === 'success') {

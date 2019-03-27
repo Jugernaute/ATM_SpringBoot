@@ -7,6 +7,8 @@ import ua.com.codelions.entity.Person;
 
 public interface PersonDao extends JpaRepository<Person, Integer> {
     Person findByUsername(String username);
+//    @SuppressWarnings("SpringDataRepositoryMethodReturnTypeInspection")
     @Query(value = "select username FROM person LEFT JOIN credit_card c on person.id_person = c.person_id_person where id_credit_card=:idCard", nativeQuery = true)
     String findPersonByIdCreditCard(@Param("idCard") int idCard);
+
 }

@@ -10,9 +10,9 @@
 
 <a href="/logout">Змінити користувача</a>
 <hr>
-    <span th:text="${user.getUsername()}"></span>
+    <span th:text="${personDTO.getUsername()}"></span>
     <span> на рахунку
-        <span class="money" th:text="${user.getCreditCard().getMoney()}"></span>
+        <span class="money" th:text="${personDTO.getMoney()}"></span>
     </span>
 <br>
 

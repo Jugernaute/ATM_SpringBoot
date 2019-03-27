@@ -12,11 +12,11 @@ import java.util.List;
 @Transactional
 public class CreditCardServiceImpl implements CreditCardService {
     @Autowired
-    CreditCardDao creditCardDao;
+    private CreditCardDao creditCardDao;
 
     @Override
     public void saveCreditCard(CreditCard creditCard) {
-        if (creditCard!=null){
+        if (creditCard != null) {
             creditCardDao.save(creditCard);
         }
     }

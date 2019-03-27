@@ -1,13 +1,19 @@
 package ua.com.codelions.entity;
 
+import org.springframework.format.number.money.MonetaryAmountFormatter;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Entity
 public class CreditCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_CreditCard;
-    private int money;
+    private long id_CreditCard;
+
+    @NotNull
+    private BigDecimal money = BigDecimal.ZERO;
 
     @OneToOne(fetch = FetchType.EAGER,
     cascade = CascadeType.ALL)
@@ -16,24 +22,25 @@ public class CreditCard {
     public CreditCard() {
     }
 
-    public CreditCard(int money) {
+    public CreditCard(BigDecimal money, Person person) {
+        this.money = money;
+        this.person = person;
+    }
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
         this.money = money;
     }
 
-    public int getId_CreditCard() {
+    public long getId_CreditCard() {
         return id_CreditCard;
     }
 
     public void setId_CreditCard(int id_CreditCard) {
         this.id_CreditCard = id_CreditCard;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
     }
 
     public Person getPerson() {
